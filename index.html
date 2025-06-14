@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Vocabulary Flashcards</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>English Pronunciation Flashcards</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <!-- Hamburger Menu -->
-        <div class="menu">
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <div class="menu-content" id="menuContent">
-                <select id="letterSelect" onchange="loadWords()">
-                    <option value="">Select Letter</option>
-                    <option value="a">A</option>
-                    <option value="b">B</option>
-                    <!-- Add options for C-Z -->
-                </select>
+    <header>
+        <h1>English Pronunciation Flashcards</h1>
+        <div class="controls">
+            <select id="letter-select">
+                <option value="A">A</option>
+                <!-- Populated dynamically -->
+            </select>
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </header>
+    <main>
+        <div id="flashcard-container">
+            <div class="flashcard">
+                <h2 id="word">Loading...</h2>
+                <button class="play-btn" onclick="playAudio()">🔊 Play</button>
             </div>
         </div>
-        <!-- Flashcard -->
-        <div class="flashcard" id="flashcard">
-            <div class="word" id="wordDisplay">Select a letter to start</div>
-            <button class="audio-btn" onclick="playAudio()">🔊</button>
-        </div>
-        <!-- Navigation Buttons -->
-        <div class="navigation">
-            <button onclick="prevWord()">Previous</button>
-            <button onclick="nextWord()">Next</button>
-        </div>
-    </div>
-    <script src="js/script.js"></script>
+        <p id="progress">0 / 0</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 EnglishWithBoone. Made in Chiang Mai.</p>
+    </footer>
+    <script src="assets/js/hammer.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
